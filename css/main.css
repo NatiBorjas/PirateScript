@@ -1,0 +1,141 @@
+/* * {
+    margin: 0;
+    padding: 0px; } */
+
+/*======================*/
+/*          TAGS        */
+/*======================*/   
+body {
+    font-family: 'Quintessential', cursive;
+    font-size: 18.5px;
+    letter-spacing: 4px;
+    color: #00ff00bb;
+    background-color: black;
+    padding: 0;
+    margin: 0;
+    grid-template-columns: 2, auto;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+form{
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+li:hover {
+    background-color: #00ff00bb;
+    color: 	black;
+    max-width: max-content;
+}
+
+/*======================*/
+/*          CLASS       */
+/*======================*/ 
+.container {
+    background-image: url(../public/img/Fondo.jpg);
+    background-repeat: no-repeat;
+    width: 960px;
+    height: 600px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 2 auto;
+    gap: 10px;
+    margin-top: 45%;
+    align-items: center;
+}
+
+.contenedor-carrito {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    transition: all .5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.carrito-active {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+}
+
+.productoEnCarrito{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.miembro :hover {
+    background-color: #00ff00bb;
+    color: 	black;
+    font-weight: bold;
+    max-width: max-content;
+}
+/*======================*/
+/*          IDS         */
+/*======================*/  
+
+#text {
+    text-align: center;
+}
+#formulario {
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    padding: 0;
+}
+
+#carrito {
+    justify-content: center;
+    position: fixed;
+    background-image: url(../public/img/inventario.png);
+    background-size: cover;
+    width: 600px;
+    height: 400px;
+    transition: all .5s;
+    padding-top: 140px;
+    padding-left: 85px;
+    padding-right: 90px;
+    display: flex;
+    flex-direction: column;
+}
+
+#btn-icon{
+    background-image: url(../public/img/cofre.png);
+    background-size: cover;
+    display: inline-block;
+    padding: 0;
+    border: none;
+    height: 80px;
+    width: 140px;
+}
+
+#btn-carrito {
+    background-color: black;
+}
+
+#contenedor-prod {
+    padding-left: 25px;
+}
+
+#titulo-carr {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+    padding-bottom: 40px;
+}

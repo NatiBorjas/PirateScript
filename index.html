@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--  Tipografía  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quintessential&display=swap" rel="stylesheet">
+    
+    <!-- Framework  -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Main CSS  -->
+    <link rel="stylesheet" href="css/main.css">
+    
+    <!--  Título  -->
+    <title>Piratescript</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="grid">
+            <div id="text"> <p>Te despertas mareadx en un lugar oscuro. Notas como el suelo se tambalea de izquierda a derecha con un movimiento ritmico. Tocas las paredes y notas que son de madera. <br> Se escucha el siseo del mar por lo que deduces que estas en un barco. Ves un hilo de luz que entra por una rendija de una puerta que tienes en frente. <br> Que haces?</p></div>
+            <div id="formulario">
+                <input id="input" type="text" placeholder="Ingresa una acción" name="entrada">                
+                <button id="boton"> Confirmar </button>
+            </div>
+            <ul id="lista"></ul>
+            <div id="tripulacion"></div>
+            <div id="continuar"></div>
+            <div id="contador"></div>
+        </div>
+    </div>
+
+    <div class="contenedor-carrito">
+        <div id="carrito"> 
+            <div id="titulo-carr">
+                <h3 id="inventario">Inventario:<span id="contador-carr">0</span></h3>
+                <p class="precioProducto">Total: D$<span id="total"></span></p>
+            </div>
+            <div id="contenedor-prod"></div>
+        </div>
+    </div>
+    
+    <!-- <footer>
+        <h5>© 2022 - Gear_Lara</h5>
+    </footer> -->
+
+
+    <script src="app/index.js" type="module"></script>
+
+    
+</body>
+
+</html>
