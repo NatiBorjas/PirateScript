@@ -22,11 +22,11 @@
 
 <body>
 
-    <div class="container">
+    <div class="container" id="container-final">
         <div class="grid">
             <div id="text"> <p>Te despertas mareadx en un lugar oscuro. Notas como el suelo se tambalea de izquierda a derecha con un movimiento ritmico. Tocas las paredes y notas que son de madera. <br> Se escucha el siseo del mar por lo que deduces que estas en un barco. Ves un hilo de luz que entra por una rendija de una puerta que tienes en frente. <br> Que haces?</p></div>
             <div id="formulario">
-                <input id="input" type="text" placeholder="Ingresa una acción" name="entrada">                
+                <input id="input" type="text" placeholder="Ingresa una acción" onfocus="this.value=''" name="entrada">                
                 <button id="boton"> Confirmar </button>
             </div>
             <ul id="lista"></ul>
@@ -39,16 +39,18 @@
     <div class="contenedor-carrito">
         <div id="carrito"> 
             <div id="titulo-carr">
-                <h3 id="inventario">Inventario:<span id="contador-carr">0</span></h3>
+                <p id="inventario">Inventario:<span id="contador-carr">0</span></p>
                 <p class="precioProducto">Total: D$<span id="total"></span></p>
+                <button id="cerrarCarrito"></button>
             </div>
             <div id="contenedor-prod"></div>
         </div>
     </div>
     
-    <!-- <footer>
-        <h5>© 2022 - Gear_Lara</h5>
-    </footer> -->
+    <div class="footer">
+        <p>2022 - Gear_Lara</p>
+    </div>
+    
 
 
     <script src="app/index.js" type="module"></script>

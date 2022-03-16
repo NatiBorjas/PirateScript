@@ -55,33 +55,6 @@ let contadorCarrito = document.getElementById("contador-carr");
 let total = document.getElementById("total");
 let continuar = document.getElementById("continuar");
 let carritoDeCompras = []
-// let provisiones = 
-// [
-//     {
-//         id: 1,
-//         nombre: "Grog",
-//         precio: 150,
-//         cantidad: 1
-//     },
-//     {
-//         id: 2,
-//         nombre: "Espada",
-//         precio: 250,
-//         cantidad: 1
-//     },
-//     {
-//         id: 3,
-//         nombre: "Madera",
-//         precio: 200,
-//         cantidad: 1
-//     },
-//     {
-//         id: 4,
-//         nombre: "Todo",
-//         precio: 450,
-//         cantidad: 1
-//     }
-// ]
 
 // document.addEventListener("DOMContentLoaded", (e) => {
 //     if (localStorage.getItem("carrito")) {
@@ -113,10 +86,15 @@ function mostrarProvisiones () {
     formulario.appendChild(botonCarrito);
 
     const carritoAbrir = document.getElementById('btn-carrito');
+    const carritoCerrar = document.getElementById('cerrarCarrito');
     const modalCarrito = document.getElementsByClassName('contenedor-carrito')[0];
     carritoAbrir.addEventListener('click', () => {
         modalCarrito.classList.toggle('carrito-active')
     });
+    carritoCerrar.addEventListener('click', () => {
+        modalCarrito.classList.toggle('carrito-active')
+    })
+
 
     fetch('/app/data/provisiones.json')
         .then( (res) => res.json())
@@ -182,9 +160,22 @@ function mostrarTripulacion() {
     btnContinuar.innerHTML = "No hubo bajas"
     continuar.appendChild(btnContinuar);
     btnContinuar.onclick = () => {
-        btnContinuar.remove()
         contenedorTripulacion.remove();
-        text.innerText = "Enhorabuena! Logran defender el barco y derrotar a los enemigos, sin sufrir ninguna baja!.\n Realizan un banquete para festejar y relajar luego de la cruenta batalla. :)\nFIN"
+
+        text.innerText = "Enhorabuena! Logran defender el barco y derrotar a los enemigos, sin sufrir ninguna baja!.\n Realizan un banquete para festejar y relajar luego de la cruenta batalla. :)"
+
+        let btnFin = btnContinuar;
+        btnFin.innerHTML = "FIN"
+
+        btnFin.onclick = () => {
+            let containerFinal = document.getElementById("container-final");
+            containerFinal.classList.toggle("final");
+            text.remove();
+            btnFin.remove()
+        }
+
+        let containerFinal = document.getElementById("container-final");
+        containerFinal.classList.toggle("container-final");
     }
 
     fetch('/app/data/tripulacion.json')
@@ -193,7 +184,7 @@ function mostrarTripulacion() {
             data.forEach( (miembro) => {
                 let div = document.createElement("div");
                 div.classList.add(`Id${miembro.id}`,`miembro`);
-                div.innerHTML += `<p>Nombre: ${miembro.nombre} - Edad: ${miembro.edad} - Puesto: ${miembro.puesto}</p>`
+                div.innerHTML += `<p class="miembro-hover">Nombre: ${miembro.nombre} - Edad: ${miembro.edad} - Puesto: ${miembro.puesto}</p>`
                 contenedorTripulacion.appendChild(div);
 
                 div.addEventListener("click", () =>  {
@@ -218,9 +209,18 @@ function eliminarMiembro(id) {
         .then( (res) => res.json())
         .then( (data) => {
             let miembroEliminado = data.find(miembroE => miembroE.id == id);
-        text.innerText = "Encuentras a " + miembroEliminado.nombre + " a estribor, yaciendo en el piso con una gran herida en las costillas.\nLamentablemente no hay manera de salvarlx.\nLe realizan un entierro en el mar para luego seguir su trayecto, con el ánimo desganado por la reciente perdida. :(\n FIN"
+        text.innerText = "Encuentras a " + miembroEliminado.nombre + " a estribor, yaciendo en el piso con una gran herida en las costillas.\nLamentablemente no hay manera de salvarlx.\nLe realizan un entierro en el mar para luego seguir su trayecto, con el ánimo desganado por la reciente perdida. :("
+        
         let btnContinuar= document.getElementById("boton-continuar");
-        btnContinuar.remove()
+        let btnFin = btnContinuar;
+        btnFin.innerHTML = "FIN"
+
+        btnFin.onclick = () => {
+            let containerFinal = document.getElementById("container-final");
+            containerFinal.classList.toggle("final");
+            text.remove();
+            btnFin.remove()
+        }
         })
 }
 
