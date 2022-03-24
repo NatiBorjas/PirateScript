@@ -156,6 +156,17 @@ input {
     visibility: visible;
 }
 
+.borrarProducto {
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    border-radius: 45%;
+    background: url(../public/img/Murray.png);
+    background-size: cover;
+    background-color: black;
+    border: 1px solid black;
+}
+
 .productoEnCarrito{
     display: flex;
     justify-content: space-between;
@@ -181,6 +192,15 @@ input {
     font-size: 10px;
     letter-spacing: 4px;
     
+}
+
+.swal2-styled.swal2-confirm {
+    color: black;
+    font-weight: bold;
+}
+.swal2-popup {
+    border: 2px solid #00ff00bb;
+    border-radius: 25px;
 }
 /*======================*/
 /*          IDS         */
@@ -248,3 +268,5 @@ input {
     justify-content: space-around;
     font-weight: bold;
 }
+
+

@@ -41,36 +41,15 @@ export default function mostrarTripulacion(array) {
             Swal.fire({
                 title: 'Triste final...',
                 text: 'Han derrotado a '+ miembro.nombre,
+                color: "#00ff00bb",
                 imageUrl: miembro.img,
                 imageWidth: 200,
                 imageHeight: 200,
                 background: "#000000",
+                confirmButtonText: "RIP",
+                confirmButtonColor: "#00ff00bb",
             })
             eliminarMiembro(miembro.id);
         })
     })
-
-
-    // fetch('/app/data/tripulacion.json')
-    //     .then( (res) => res.json())
-    //     .then( (data) => {
-    //         data.forEach( (miembro) => {
-    //             let div = document.createElement("div");
-    //             div.classList.add(`Id${miembro.id}`,`miembro`);
-    //             div.innerHTML += `<p class="miembro-hover">Nombre: ${miembro.nombre} - Edad: ${miembro.edad} - Puesto: ${miembro.puesto}</p>`
-    //             contenedorTripulacion.appendChild(div);
-
-    //             div.addEventListener("click", () =>  {
-    //                 Swal.fire({
-    //                     title: 'Triste final...',
-    //                     text: 'Han derrotado a '+ miembro.nombre,
-    //                     imageUrl: miembro.img,
-    //                     imageWidth: 200,
-    //                     imageHeight: 200,
-    //                     background: "#000000",
-    //                 })
-    //                 eliminarMiembro(miembro.id);
-    //             })
-    //         })
-    //     })
 }
