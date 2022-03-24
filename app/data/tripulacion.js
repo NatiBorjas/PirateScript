@@ -5,7 +5,7 @@ const Tripulacion =
         nombre: "Edward “BarbaNegra” Thatch",
         edad: 32,
         puesto: "Capitan",
-        img: "/public/img/barbanegra.png"
+        img: "public/img/barbanegra.png"
     },
     {
         id: 2,
