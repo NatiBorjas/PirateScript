@@ -11,14 +11,14 @@ let padreContador = document.getElementById("contador");
 export default function mostrarProvisiones (array) {
     padreContador.remove();
     input.remove();
-    boton.remove();
+    boton2.remove();
     formulario.style.display = "block";
 
     text.innerText = "Tu primer tarea es ir a comprar provisiones...";
     
     let btnContinuar= document.createElement("button");
     btnContinuar.setAttribute("id","boton-continuar" );
-    btnContinuar.innerHTML = "Confirmar compra"
+    btnContinuar.innerHTML = "Confirmar compra";
     continuar.appendChild(btnContinuar);
     btnContinuar.onclick = () => {
         mostrarTripulacion(Tripulacion);

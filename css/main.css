@@ -90,6 +90,7 @@ input {
     color: beige;
     border-radius: 20px;
     padding: 10px;
+    text-transform: lowercase;
 }
 
 

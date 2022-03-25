@@ -6,50 +6,76 @@ let boton = document.getElementById("boton");
 let input = document.getElementById("input");
 let formulario = document.getElementById("formulario");
 let padreContador = document.getElementById("contador");
-let accion = "";
 
-boton.addEventListener("click",(accion) =>{
-    getInput();
-    entrada1(accion);
+
+boton.addEventListener('click',() =>{
+    entrada1(input.value);
 });
 
-function getInput(){
-    accion = input.value;
-}
 
 function entrada1 () {
-    if ((accion === "mirar por la rendija") || (accion === "mirar") || (accion === "mirar por rendija")) {
-        text.innerText = "Ves que es de noche, hay un hombre con pata de palo pateando un barril que dice GROG y bebiendo del mismo.\nDe repente cae desmayado y no hay nadie alrededor pero notas un manojo de llaves las cuales estan a tu alcance.\nQue haces?";
-        accion = "";
-        boton.addEventListener("click",(accion) => {
-        getInput();
-        entrada2(accion);
         
-    });
-    } 
-    // else {
-    //     Swal.fire({
-    //         title: 'Arrggg...',
-    //         text: 'Opción no disponible. Prueba de nuevo, indicando una acción a realizar',
-    //         color: "#00ff00bb",
-    //         icon: "error",
-    //         iconColor: "#8B0000",
-    //         background: "#000000",
-    //         confirmButtonText: "Reintentar...",
-    //         confirmButtonColor: "#00ff00bb",
-    //     })
-    // } 
+        let accion1 = input.value;
+        
+        if ((accion1 === "mirar por la rendija") || (accion1 === "mirar") || (accion1 === "mirar por rendija")) {
+            text.innerText = "Ves que es de noche, hay un hombre con pata de palo pateando un barril que dice GROG y bebiendo del mismo.\nDe repente cae desmayado y no hay nadie alrededor pero notas un manojo de llaves las cuales estan a tu alcance.\nQue haces?";
+            
+            boton.remove();
+
+            let boton2 = document.createElement("button");
+            boton2.innerHTML = "Confirmar";
+            boton2.setAttribute("id", "boton2");
+            formulario.appendChild(boton2);
+            
+            boton2.addEventListener('click',() =>{
+                entrada2(input.value);
+                
+            });
+
+
+        } else {
+            Swal.fire({
+                title: 'Arrggg...',
+                text: 'Opción no disponible. Prueba de nuevo, indicando una acción a realizar',
+                color: "#00ff00bb",
+                icon: "error",
+                iconColor: "#8B0000",
+                background: "#000000",
+                confirmButtonText: "Reintentar...",
+                confirmButtonColor: "#00ff00bb",
+            })
+        }
 }
 
 function entrada2 () {
-    if ((accion == "agarrar las llaves") || (accion == "agarrar llaves") || (accion == "tomar las llaves") || (accion == "tomar llaves") || (accion == "coger las llaves") || (accion == "coger llaves") || (accion == "agarrar") || (accion == "coger")) {
-    text.innerText = "Extiendes el brazo y agarras el manojo de llaves oxidadas algunas de las cuales se rompen al pasarlas por la rendija. \nComienzas a probar las mismas en la cerradura de la puerta...";
-    formulario.style.display = "none";
-    counter();
-    } 
-}
+        
+        let accion2 = input.value;
+        if ((accion2 == "agarrar las llaves") || (accion2 == "agarrar llaves") || (accion2 == "tomar las llaves") || (accion2 == "tomar llaves") || (accion2 == "coger las llaves") || (accion2 == "coger llaves") || (accion2 == "agarrar") || (accion2 == "coger")) {
+            text.innerText = "Extiendes el brazo y agarras el manojo de llaves oxidadas algunas de las cuales se rompen al pasarlas por la rendija. \nComienzas a probar las mismas en la cerradura de la puerta...";
+            formulario.style.display = "none";
+            
+            counter();
+
+        } 
+        else {
+
+            Swal.fire({
+                title: 'Arrggg...',
+                text: 'Opción no disponible. Prueba de nuevo, indicando una acción a realizar',
+                color: "#00ff00bb",
+                icon: "error",
+                iconColor: "#8B0000",
+                background: "#000000",
+                confirmButtonText: "Reintentar...",
+                confirmButtonColor: "#00ff00bb",
+        });
+        }
+
+};
+
 
 function counter () {
+
     let btnContador = document.createElement("button");
     let contador = 0;
     btnContador.innerHTML = "Probar llaves"
